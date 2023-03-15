@@ -2,5 +2,56 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Calibri
+  font-family: arial;
+}
+
+:root {
+  --bg-color: #222;
+  --primary-color: #fff;
+  --grey-color: #555;
+  --accent: crimson;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+}
+
+/* header */
+
+.header {
+  padding: 10px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+.header .email {
+  color: var(--grey-color);
+  font-size: 20px;
+  color: var(--accent);
+}
+
+/* main */
+
+.main .form-options {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.form-options .select {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #111;
+  color: var(--primary-color);
+
+}
+
+.select:focus {
+  outline: none;
 }
