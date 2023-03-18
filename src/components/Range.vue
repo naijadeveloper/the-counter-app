@@ -8,7 +8,7 @@
         <input type="number" placeholder="count up to" v-model="numberValue" :disabled="disableInput">
       </div>
       <div class="the-buttons">
-        <button @click="handlePlayOrReset" :class="playOrReset">{{ playOrReset }}</button>
+        <button @click="handleCountOrReset" :class="countOrReset">{{ countOrReset }}</button>
         <button @click="handleStop" :class="disabledOrStop">Stop</button>
       </div>
     </div>
@@ -25,7 +25,7 @@ export default {
     const { rangeStart, interval, play, stop, rangeReset } = counter();
     const numberValue = ref(null);
     const disableInput = ref(false);
-    const playOrReset = ref("play");
+    const countOrReset = ref("count");
     const disabledOrStop = computed(() => interval.value? "stop":"disabled");
 
     //this is just to determine the css style rules for
@@ -46,16 +46,16 @@ export default {
     });
     ///////////////
 
-    const handlePlayOrReset = () => {
-      if(numberValue.value != null && playOrReset.value == "play") {
+    const handleCountOrReset = () => {
+      if(numberValue.value != null && countOrReset.value == "count") {
         play(numberValue.value);
         disableInput.value = true;
-        playOrReset.value = "reset";
-      }else if(playOrReset.value == "reset") {
+        countOrReset.value = "reset";
+      }else if(countOrReset.value == "reset") {
         rangeReset();
         disableInput.value = false;
         numberValue.value = null;
-        playOrReset.value = "play";
+        countOrReset.value = "count";
       }
     }
 
@@ -73,9 +73,9 @@ export default {
       numberValue,
       disableInput, 
       disabledOrStop, 
-      playOrReset, 
+      countOrReset, 
       rangeStart, 
-      handlePlayOrReset, 
+      handleCountOrReset, 
       handleStop,
       countClass
     }
