@@ -1,0 +1,81 @@
+@media screen and (max-width: 550px) {
+  .form-input input {
+    width: 60%;
+  }
+
+  .form-input textarea {
+    width: 90%;
+  }
+
+  .controls .the-buttons {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header h1 {
+    font-size: 40px;
+  }
+  
+  .header .email {
+    font-size: 18px;
+  }
+
+  .range .form-input input {
+    width: 80%;
+  }
+
+  .form-input textarea {
+    width: 95%;
+  }
+
+  .controls .the-buttons {
+    flex-direction: column;
+  }
+
+  .the-buttons button:first-child {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .manual .form-input input {
+    width: 65%;
+  }
+}
+
+
+/* FOR COUNTER FONT-SIZE */
+
+@media screen and (max-width: 712px) {
+  .count-number.ten-thousand {
+    font-size: 200px;
+  }
+}
+
+@media screen and (max-width: 573px) {
+  .count-number.ten-thousand {
+    font-size: 150px;
+  }
+
+  .count-number.thousand {
+    font-size: 200px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .count-number.thousand {
+    font-size: 150px;
+  }
+}
+
+@media screen and (max-width: 434px) {
+  .count-number.ten-thousand {
+    font-size: 100px;
+  }
+
+  .count-number.hundred {
+    font-size: 200px;
+  }
+}
+

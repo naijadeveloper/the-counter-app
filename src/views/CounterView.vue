@@ -4,7 +4,7 @@
       <p>THE</p>
       <p>COUNTER APP</p>
     </h1>
-    <p class="email">mmejuenoch@gmail.com</p>
+    <p class="email">❤mmejuenoch@gmail.com❤</p>
   </header>
   <main class="main">
     <form class="form-options" @submit.prevent="handleSelect">

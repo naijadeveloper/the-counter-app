@@ -1,6 +1,6 @@
 <template>
   <div class="range">
-    <div class="count-number">
+    <div :class="countClass">
       <p>{{ rangeStart }}</p>
     </div>
     <div class="controls">
@@ -28,6 +28,24 @@ export default {
     const playOrReset = ref("play");
     const disabledOrStop = computed(() => interval.value? "stop":"disabled");
 
+    //this is just to determine the css style rules for
+    //responsiveness to be given to the div.count-number
+    //whenever the count.value number changes 
+    const countClass = computed(() => {
+      if(rangeStart.value >= 0 && rangeStart.value < 100) {
+        return "count-number";
+      }else if((rangeStart.value >= 100 && rangeStart.value < 1000) || (rangeStart.value < 0 && rangeStart.value >= -99)) {
+        return "count-number hundred";
+      } else if(rangeStart.value >= 1000 && rangeStart.value < 10000) {
+        return "count-number thousand";
+      } else if (rangeStart.value >= 10000) {
+        return "count-number ten-thousand";
+      } else {
+        return "count-number ten-thousand";
+      }
+    });
+    ///////////////
+
     const handlePlayOrReset = () => {
       if(numberValue.value != null && playOrReset.value == "play") {
         play(numberValue.value);
@@ -51,7 +69,16 @@ export default {
       rangeReset();
     });
 
-    return {numberValue, disableInput, disabledOrStop, playOrReset, rangeStart, handlePlayOrReset, handleStop}
+    return {
+      numberValue,
+      disableInput, 
+      disabledOrStop, 
+      playOrReset, 
+      rangeStart, 
+      handlePlayOrReset, 
+      handleStop,
+      countClass
+    }
   }
 }
 </script>
